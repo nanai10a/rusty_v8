@@ -218,7 +218,7 @@ where
   /// value.
   #[inline(always)]
   pub fn get<'s>(&self, scope: &mut HandleScope<'s>) -> Local<'s, Value> {
-    unsafe { scope.cast_local(|_| v8__ReturnValue__Value__Get(&self.0)) }
+    unsafe { scope.cast_local::<Value>(|_| v8__ReturnValue__Value__Get(&self.0)) }
       .unwrap()
   }
 }
